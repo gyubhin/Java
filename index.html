@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>네부게이션</title>
+  <style>
+    * {padding: 0;margin: 0; list-style: none;}
+    body {padding: 30px;}
+      .tab_type1 ul { display: flex; height:60px; border-bottom:3px solid
+        #505050;}
+      .tab_type1 ul li{ flex:1;}
+      .tab_type1 ul li:first-child a {border-left:3px solid #505050;}
+      .tab_type1 ul li a {display: block; height: 59px; border :3px solid #505050;
+          border-left: none; border-bottom:none; font-size:20px; color:#505050;
+          text-align: center; line-height:59px; text-decoration:none;}
+      .tab_type1 ul li a on {position: relative; height:58px; border-color:#505050; border-top-width:2px; line-height: 57px; border-bottom:1px solid #fff;}
+      .tab_type1 ul li a on:before {content:"";position:absolute; left:-1px;top:-2px;width: 1px;height:100%;background:#5da62b; border-top:2px solid #5da62b;}
+      @import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  font-family: 'Sunflower', sans-serif;
+  margin: 20px;
+}
+h2 {
+  font-size: 50px;
+  font-family: 'Sunflower', sans-serif;
+}
+h3 {
+  font-size: 40px;
+  font-family: 'Sunflower', sans-serif;
+}
+.button_A11 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_A11 {
+  font-size: 20px;
+}
+.button_A12 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_A12{
+  font-size: 20px;
+}
+.button_A13{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_A13{
+  font-size: 20px;
+}
+.button_A15{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_A15{
+  font-size: 20px;
+} 
+.button_A21{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_A21{
+  font-size: 20px;
+}  
+.button_A22{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_A22{
+  font-size: 20px;
+} 
+.button_A23{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_A23{
+  font-size: 20px;
+}          
+.button_B11 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_B11 {
+  font-size: 20px;
+}
+.button_B12 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_B12 {
+  font-size: 20px;
+}
+.button_B13 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_B13 {
+  font-size: 20px;
+}    
+.button_B14 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_B14 {
+  font-size: 20px;
+}    
+.button_B15 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_B15 {
+  font-size: 20px;
+}    
+.button_B16 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_B16 {
+  font-size: 20px;
+}    
+.button_C11 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C11 {
+  font-size: 20px;
+}
+.button_C12 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C12{
+  font-size: 20px;
+}
+.button_C13{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C13{
+  font-size: 20px;
+}
+.button_C14{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C14{
+  font-size: 20px;
+} 
+.button_C21{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C21{
+  font-size: 20px;
+}  
+.button_C22{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C22{
+  font-size: 20px;
+} 
+.button_C23{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C23{
+  font-size: 20px;
+} 
+.button_C24{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C24{
+  font-size: 20px;
+}  
+.button_C25{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C25{
+  font-size: 20px;
+} 
+.button_C26{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C26{
+  font-size: 20px;
+}
+.button_C27{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C27{
+  font-size: 20px;
+} 
+.button_C28{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_C28{
+  font-size: 20px;
+}            
+.button_D12 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_D12 {
+  font-size: 20px;
+}
+.button_D13 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_D13{
+  font-size: 20px;
+}
+.button_D14{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_D14{
+  font-size: 20px;
+}
+.button_D21{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_D21{
+  font-size: 20px;
+}  
+.button_D22{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_D22{
+  font-size: 20px;
+} 
+.button_D23{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_D23{
+  font-size: 20px;
+} 
+.button_D24{
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_D24{
+  font-size: 20px;
+}            
+.button_E11 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_E11 {
+  font-size: 20px;
+}
+.button_E12 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_E12 {
+  font-size: 20px;
+}
+.button_E13 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_E13 {
+  font-size: 20px;
+}    
+.button_E14 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_E14 {
+  font-size: 20px;
+}    
+.button_E21 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_E21 {
+  font-size: 20px;
+}    
+.button_E22 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_E22 {
+  font-size: 20px;
+}    
+.button_E29 {
+  font-size: 20px;
+  font-family: 'Sunflower', sans-serif;
+  background-color:rgb(211, 232, 239);
+  border-color: darkgrey;
+}
+.dialog_E29 {
+  font-size: 20px;
+}    
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+dialog {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border: 0px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px 50px 10px 50px
+}
+.font1 {
+  font-family: 'Sunflower', sans-serif;
+  font-size: 35px
+}
+.font2 {
+  font-family: 'Sunflower', sans-serif;
+  font-size: 25px;
+}
+.font_sun {
+  font-family: 'Sunflower', sans-serif;
+}
+a {
+  text-decoration-line: none;
+  color:black;
+  
+}
+.button {
+  background-color:rgba(189, 219, 239, 0.502);
+  border-width: 1px;
+  
+}/*rgb(177, 212, 247) rgba(189, 219, 239, 0.502)*/
+.margin1 {
+  margin-left: 500px;
+}
+.margin2 {
+  margin-left: 500px;
+}
+.multi-accordion {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: .5em .5em 0;
+    overflow: hidden;
+    background-color: rgb(252, 252, 252);
+    line-height:1.5;
+}
+.multi-accordion summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+    cursor: pointer;
+}
+/* 둥근 테두리인 첫 번째 아이템 상단의 배경색이 삐져 나오는 것 처리 */
+.multi-accordion details:first-child summary{
+    border-radius: 10px 10px 0 0;
+}
+/* 열림 아이템 */
+.multi-accordion details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+    background-color: aliceblue;
+    letter-spacing: 0.1em;
+}
+/* 열린 아이템이 첫 번째 아이템이 아니면 디자인 요소 추가 */
+.multi-accordion details:not(:first-child)[open] summary {
+    margin-top: .15em;
+    border-top: 1px solid #aaa;
+
+}
+/* 열림 아이템 다음 아이템의 키워드 상단에 테두리선 추가 */
+.multi-accordion details[open] + details > summary {
+    border-top: 1px solid #aaa;
+}
+#building-name{
+  background-color: rgba(189, 219, 239, 0.502);
+}
+#building-inf{
+  background-color:#e9e8e8
+}
+.building_font {
+    font-size: 25px;
+    font-family: 'Sunflower', sans-serif;
+}  
+  </style>
+</head>
+  <body bgcolor="beige">
+  <h1 class="font_sun">네부게이션</h1> <!--글씨체 안바뀜-->
+  <nav class = "tab_type1">
+    <ul>
+      <li font-weight:bold;><a href="">새로고침</a></li>
+      <li font-weight:bold;><a href="https://pknu-wap.github.io/2023_1_WEB8_NaPugation/">건물정보</a></li>
+    </ul>
+  </nav>
+ 
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>simpleMap</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=Hz2FRQ7V1LaHuZxpL92Fn7UPuG3RndEq1ENh2wA6"></script>
+<script type="text/javascript">
+   var marker_s, marker_e, marker_p1, marker_p2;
+   var totalMarkerArr = [];
+   var drawInfoArr = [];
+   var resultdrawArr = [];
+   var map, marker;
+   var start, end;
+
+     function initTmap() {
+      map = new Tmapv2.Map("map_div", {
+         center: new Tmapv2.LatLng(35.13399576311834, 129.1055538706261),
+         width: "100%",
+         height: "575px",
+         zoom: 17,
+         zoomControl: true,
+         scrollwheel: true
+      });
+
+      marker_s = new Tmapv2.Marker({
+         position: new Tmapv2.LatLng(36.000000000010, 129.9999999999),
+         icon: "http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_m_s.png",
+         iconSize: new Tmapv2.Size(24, 38),
+         map: map
+      });
+
+      marker_e = new Tmapv2.Marker({
+         position: new Tmapv2.LatLng(36, 130),
+         icon: "http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_m_e.png",
+         iconSize: new Tmapv2.Size(24, 38),
+         map: map
+      });
+
+      map.addListener("click", function (event) {
+         if (!start) {
+            start = event.latLng;
+            marker_s.setPosition(start);
+         } else if (!end) {
+            end = event.latLng;
+            marker_e.setPosition(end);
+            calculateRoute();
+         }
+      });
+   }
+
+   function onClick(e) {
+      if (!start) {
+         start = e.latLng;
+         addMarker(start, "http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_m_s.png");
+      } else if (!end) {
+         end = e.latLng;
+         addMarker(end, "http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_m_e.png");
+      } else {
+         start = e.latLng;
+         marker_s.setPosition(start);
+      }
+   }
+
+   function addMarker(position, iconUrl) {
+      if (marker) {
+         marker.setMap(null);
+      }
+      marker = new Tmapv2.Marker({
+         position: position,
+         icon: iconUrl,
+         iconSize: new Tmapv2.Size(24, 38),
+         map: map
+      });
+   }
+
+   function addComma(num) {
+      var regexp = /\B(?=(\d{3})+(?!\d))/g;
+      return num.toString().replace(regexp, ',');
+   }
+
+   function drawLine(arrPoint) {
+      var polyline_ = new Tmapv2.Polyline({
+         path: arrPoint,
+         strokeColor: "#DD0000",
+         strokeWeight: 6,
+         map: map
+      });
+      resultdrawArr.push(polyline_);
+   }
+
+   function calculateRoute() {
+      if (!start || !end) {
+         return;
+      }
+
+      var startX = start.lng();
+      var startY = start.lat();
+      var endX = end.lng();
+      var endY = end.lat();
+
+      var headers = {};
+      headers["appKey"] = "Hz2FRQ7V1LaHuZxpL92Fn7UPuG3RndEq1ENh2wA6";
+
+      $.ajax({
+         method: "POST",
+         headers: headers,
+         url: "https://apis.openapi.sk.com/tmap/routes/pedestrian?version=1&format=json&callback=result",
+         async: false,
+         data: {
+            "startX": startX,
+            "startY": startY,
+            "endX": endX,
+            "endY": endY,
+            "reqCoordType": "WGS84GEO",
+            "resCoordType": "EPSG3857",
+            "startName": "출발지",
+            "endName": "도착지"
+         },
+         success: function (response) {
+            var resultData = response.features;
+
+            // 결과 출력
+            var tDistance = "총 거리: " + ((resultData[0].properties.totalDistance) / 1000).toFixed(1) + "km,";
+            var tTime = " 총 시간 ➡ 느린 걸음 : " + ((resultData[0].properties.totalTime) / 60 * 5 / 4).toFixed(1) + "분,    평균 걸음 : " + ((resultData[0].properties.totalTime) / 60).toFixed(1) + "분,    빠른 걸음 : " + ((resultData[0].properties.totalTime) / 60 * 5 / 7).toFixed(1) + "분";
+
+            $("#result").text(tDistance + tTime);
+
+            // 기존 그려진 라인 & 마커 초기화
+            if (resultdrawArr.length > 0) {
+               for (var i in resultdrawArr) {
+                  resultdrawArr[i].setMap(null);
+               }
+               resultdrawArr = [];
+            }
+
+            drawInfoArr = [];
+
+            for (var i in resultData) {
+               var geometry = resultData[i].geometry;
+               var properties = resultData[i].properties;
+
+               if (geometry.type == "LineString") {
+                  for (var j in geometry.coordinates) {
+                     var latlng = new Tmapv2.Point(geometry.coordinates[j][0], geometry.coordinates[j][1]);
+                     var convertPoint = new Tmapv2.Projection.convertEPSG3857ToWGS84GEO(latlng);
+                     var convertChange = new Tmapv2.LatLng(convertPoint._lat, convertPoint._lng);
+                     drawInfoArr.push(convertChange);
+                  }
+               } else {
+                  var markerImg = "";
+                  var pType = "";
+                  var size;
+
+                  if (properties.pointType == "S") {
+                     markerImg = "http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_m_s.png";
+                     pType = "S";
+                     size = new Tmapv2.Size(24, 38);
+                  } else if (properties.pointType == "E") {
+                     markerImg = "http://tmapapi.sktelecom.com/upload/tmap/marker/pin_r_m_e.png";
+                     pType = "E";
+                     size = new Tmapv2.Size(24, 38);
+                  } else {
+                     markerImg = "http://topopen.tmap.co.kr/imgs/point.png";
+                     pType = "P";
+                     size = new Tmapv2.Size(8, 8);
+                  }
+
+                  var latlon = new Tmapv2.Point(geometry.coordinates[0], geometry.coordinates[1]);
+                  var convertPoint = new Tmapv2.Projection.convertEPSG3857ToWGS84GEO(latlon);
+
+                  var routeInfoObj = {
+                     markerImage: markerImg,
+                     lng: convertPoint._lng,
+                     lat: convertPoint._lat,
+                     pointType: pType
+                  };
+
+                  marker = new Tmapv2.Marker({
+                     position: new Tmapv2.LatLng(routeInfoObj.lat, routeInfoObj.lng),
+                     icon: routeInfoObj.markerImage,
+                     iconSize: size,
+                     map: map
+                  });
+               }
+            }
+            drawLine(drawInfoArr);
+         },
+         error: function (request, status, error) {
+            console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+         }
+      });
+   }
+
+   function reset() {
+    if (resultdrawArr.length > 0) {
+               for (var i in resultdrawArr) {
+                  resultdrawArr[i].setMap(null);
+               }
+               resultdrawArr = [];
+            }
+    marker.setMap(null);
+    marker_s.setMap(null);
+    marker_e.setMap(null);
+    marker_p1.setMap(null);
+    marker_p2.setMap(null);
+    
+    
+
+    start = null;
+end = null;
+map.addListener("click", function (event) {
+   if (!start) {
+      start = event.latLng;
+      marker_s.setPosition(start);
+   } else if (!end) {
+      end = event.latLng;
+      marker_e.setPosition(end);
+      calculateRoute();
+   }
+});
+
+   }
+</script>
+</head>
+<body onload="initTmap();">
+
+</script>
+</head>
+<body onload="initTmap();">
+   
+      <!-- 190430 기존 지도를 모두 이미지 처리 위해 주석 처리 S -->
+      <div id="map_wrap" class="map_wrap3">
+         <div id="map_div"></div>
+         
+      </div>
+      <div class="map_act_btn_wrap clear_box"></div>
+      <p id="result"></p>
+      
+</body>
+</html>
